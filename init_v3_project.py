@@ -1,4 +1,4 @@
-"""一鍵初始化基於 V3 黃金範本的新專案 (init_v3_project.py)
+﻿"""一鍵初始化基於 V3 黃金範本的新專案 (init_v3_project.py)
 
 用法：
     python init_v3_project.py <專案英文ID> [--title <中文片名>]
@@ -54,6 +54,13 @@ def main():
     scripts_to_copy = [
         "lint_v3.py",
         "build_specs_v3.py",
+        "build_film_v3.py",
+        "gate2_inspect.py",
+        "reburn_single_line_subs.py",
+        "make_vertical_panscan.py",
+        "inspect_vert.py",
+        "relax_voices.py",
+        "check_spec.py",
         "audit_audio_v3.py",
         "fix_v3_cut.py",
         "make_ending_v3.py",
@@ -152,3 +159,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
