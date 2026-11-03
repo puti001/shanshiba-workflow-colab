@@ -311,60 +311,75 @@ def main():
         "-ar", str(SR), str(POST / "mix.wav")
     ], check=True)
 
-    # 5. 產生 16:9 ASS 字幕 (自動斷行確保單行 <= 24 字，左右留足安全邊距絕不切字)
-    def wrap_sub(text, limit=23):
-        if len(text) <= limit:
-            return text
-        mid = len(text) // 2
-        best_p = mid
-        for offset in range(10):
-            for cand in (mid + offset, mid - offset):
-                if 0 < cand < len(text) and text[cand - 1] in "，。？！、：…":
-                    best_p = cand
-                    break
-            else:
+    def split_sub_clauses(role_name, text, t_start, t_end, max_len=20):
+        """將長句按標點切為多段單行字幕，每段嚴格 <= max_len 字（含首段角色名），絕不出現 \\N 雙行"""
+        raw_parts = re.findall(r"[^，。？！、：…]+[，。？！、：…]*", text)
+        if not raw_parts:
+            raw_parts = [text]
+    
+        clauses = []
+        for part in raw_parts:
+            part = part.strip()
+            if not part:
                 continue
-            break
-        return text[:best_p] + r"\N" + text[best_p:]
+            if not clauses:
+                first_cand = f"{role_name}：{part}"
+                if len(first_cand) <= max_len:
+                    clauses.append(first_cand)
+                else:
+                    # 若單一子句加角色名超過 max_len，在 max_len 內切開
+                    cut_p = max_len - len(role_name) - 1
+                    clauses.append(f"{role_name}：{part[:cut_p]}")
+                    clauses.append(part[cut_p:])
+            else:
+                # 若前一段很短（如「第一招：」或「蹲下來看，」）且合併後 <= max_len，則合併為同一單行
+                if len(clauses[-1]) + len(part) <= max_len and (clauses[-1][-1] in "、：" or len(clauses[-1]) <= 10):
+                    clauses[-1] += part
+                elif len(part) <= max_len:
+                    clauses.append(part)
+                else:
+                    clauses.append(part[:max_len])
+                    clauses.append(part[max_len:])
+    
+        # 按各段字數比例分配時間軸，切換流暢貼合語音
+        weights = [max(2, len(re.sub(r"^(黃老師|佛陀)：", "", c))) for c in clauses]
+        total_w = sum(weights)
+        span = max(0.5, t_end - t_start)
+        out_segs = []
+        cur = t_start
+        for idx_c, (c, w) in enumerate(zip(clauses, weights)):
+            seg_dur = span * (w / total_w)
+            nxt = t_end if idx_c == len(clauses) - 1 else (cur + seg_dur)
+            out_segs.append((round(cur, 2), round(nxt, 2), c))
+            cur = nxt
+        return out_segs
 
+    # 1. 產生 16:9 單行分段 ASS 字幕（PlayResX=1920, WrapStyle=2 禁止自動換成兩行）
     hdr = (
         "[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\nWrapStyle: 2\n\n[V4+ Styles]\n"
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
         "Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
     )
     for k, c in chars.items():
-        hdr += f"Style: {k},Microsoft JhengHei,48,{c.get('sub_color', '&H00FFFFFF')},&H000000FF,&H00101010,&H80000000,-1,0,0,0,100,100,1,0,1,4,1,2,110,110,52,1\n"
+        hdr += f"Style: {k},Microsoft JhengHei,54,{c.get('sub_color', '&H00FFFFFF')},&H000000FF,&H00101010,&H80000000,-1,0,0,0,100,100,1,0,1,4,1,2,80,80,54,1\n"
     ev = "\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+
     caps = sorted([(l, r) for r in edl_rows for l in r["lines"]], key=lambda x: x[0]["film_start"])
+    print("=== 單行分段字幕預覽（每段 <= 20 字，一次只顯示 1 行）===")
     for i, (l, r) in enumerate(caps):
-        a = max(r["start"] + 0.12, l["film_start"] - 0.05)
-        b = max(a + 0.5, l["film_end"] + 0.20)
+        a = max(r["start"] + 0.10, l["film_start"] - 0.04)
+        b = max(a + 0.5, l["film_end"] + 0.16)
         if i + 1 < len(caps):
-            b = min(b, caps[i + 1][0]["film_start"] - 0.12)
-        b = min(b, r["start"] + r["dur"] - 0.10)
-        wrapped_line = wrap_sub(l["text"], limit=23)
-        ev += f"Dialogue: 0,{ass_time(a)},{ass_time(b)},{l['who']},,0,0,0,,{chars[l['who']]['name']}：{wrapped_line}\n"
+            b = min(b, caps[i + 1][0]["film_start"] - 0.08)
+        b = min(b, r["start"] + r["dur"] - 0.08)
+        segs = split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=20)
+        for seg_a, seg_b, seg_txt in segs:
+            print(f"  [{r['id']}] {seg_a:5.2f}s~{seg_b:5.2f}s ({len(seg_txt):2d}字): {seg_txt}")
+            ev += f"Dialogue: 0,{ass_time(seg_a)},{ass_time(seg_b)},{l['who']},,0,0,0,,{seg_txt}\n"
 
     (POST / "subs.ass").write_text(hdr + ev, encoding="utf-8")
-    (OUT / "cut").mkdir(parents=True, exist_ok=True)
-    subprocess.run([
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-i", "post/video.mp4", "-i", "post/mix.wav",
-        "-vf", "subtitles=post/subs.ass",
-        "-map", "0:v", "-map", "1:a",
-        "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-shortest",
-        "cut/film_1080p.mp4"
-    ], cwd=str(OUT), check=True)
 
-    subprocess.run([
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-i", str(OUT / "cut" / "film_1080p.mp4"),
-        "-vf", "scale=1280:720", "-c:v", "libx264", "-crf", "24",
-        "-c:a", "aac", "-b:a", "128k", str(OUT / "cut" / "film_720p_phone.mp4")
-    ], check=True)
-
-    # 6. 同步生成 9:16 (1080x1920) 手機直式滿版特仕版
+    # 2. 產生 9:16 單行分段 ASS 字幕
     hdr_v = (
         "[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 2\n\n[V4+ Styles]\n"
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
@@ -374,22 +389,41 @@ def main():
         "Style: bot_credit,Microsoft JhengHei,30,&H00B0D8FF,&H000000FF,&H00081020,&H00000000,-1,0,0,0,100,100,1,0,1,3,1,2,40,40,120,1\n"
     )
     for k, c in chars.items():
-        hdr_v += f"Style: {k},Microsoft JhengHei,46,{c.get('sub_color', '&H00FFFFFF')},&H000000FF,&H00101010,&H90000000,-1,0,0,0,100,100,1,0,1,5,2,2,55,55,310,1\n"
+        hdr_v += f"Style: {k},Microsoft JhengHei,46,{c.get('sub_color', '&H00FFFFFF')},&H000000FF,&H00101010,&H90000000,-1,0,0,0,100,100,1,0,1,5,2,2,35,35,340,1\n"
     ev_v = "\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
     ev_v += f"Dialogue: 0,0:00:00.00,{ass_time(vtotal)},top_tag,,0,0,0,,★ 佛光山佛陀紀念館・沉浸式導覽特企 ★\n"
     ev_v += f"Dialogue: 0,0:00:00.00,{ass_time(vtotal)},top_title,,0,0,0,,《菩提心起：佛陀教我做導覽》\n"
     ev_v += f"Dialogue: 0,0:00:00.00,{ass_time(vtotal)},bot_credit,,0,0,0,,屏東縣後庄國小黃朝榮老師 (Puti-AI) 作品｜免費分享・歡迎推廣\n"
 
     for i, (l, r) in enumerate(caps):
-        a = max(r["start"] + 0.12, l["film_start"] - 0.05)
-        b = max(a + 0.5, l["film_end"] + 0.20)
+        a = max(r["start"] + 0.10, l["film_start"] - 0.04)
+        b = max(a + 0.5, l["film_end"] + 0.16)
         if i + 1 < len(caps):
-            b = min(b, caps[i + 1][0]["film_start"] - 0.12)
-        b = min(b, r["start"] + r["dur"] - 0.10)
-        txt = wrap_sub(l["text"], limit=17)
-        ev_v += f"Dialogue: 1,{ass_time(a)},{ass_time(b)},{l['who']},,0,0,0,,{chars[l['who']]['name']}：{txt}\n"
+            b = min(b, caps[i + 1][0]["film_start"] - 0.08)
+        b = min(b, r["start"] + r["dur"] - 0.08)
+        for seg_a, seg_b, seg_txt in split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=20):
+            ev_v += f"Dialogue: 1,{ass_time(seg_a)},{ass_time(seg_b)},{l['who']},,0,0,0,,{seg_txt}\n"
 
     (POST / "subs_vertical.ass").write_text(hdr_v + ev_v, encoding="utf-8")
+
+    # 3. 直接從已組裝好的 post/video.mp4 + post/mix.wav 極速重壓字幕
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-i", "post/video.mp4", "-i", "post/mix.wav",
+        "-vf", "subtitles=post/subs.ass",
+        "-map", "0:v", "-map", "1:a",
+        "-c:v", "libx264", "-crf", "16", "-preset", "fast", "-pix_fmt", "yuv420p",
+        "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-shortest",
+        "cut/film_1080p.mp4"
+    ], cwd=str(OUT), check=True)
+
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-i", str(OUT / "cut" / "film_1080p.mp4"),
+        "-vf", "scale=1280:720", "-c:v", "libx264", "-crf", "24", "-preset", "fast",
+        "-c:a", "aac", "-b:a", "128k", str(OUT / "cut" / "film_720p_phone.mp4")
+    ], check=True)
+
     vf_vert = (
         "split=2[bg][fg];"
         "[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:4,eq=brightness=-0.38:saturation=0.75[bg2];"
@@ -402,7 +436,7 @@ def main():
         "-i", "post/video.mp4", "-i", "post/mix.wav",
         "-filter_complex", vf_vert,
         "-map", "0:a?", "-map", "1:a",
-        "-c:v", "libx264", "-crf", "17", "-preset", "medium",
+        "-c:v", "libx264", "-crf", "17", "-preset", "fast",
         "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-shortest",
         "cut/film_vertical_1080x1920.mp4"
     ], cwd=str(OUT), check=True)

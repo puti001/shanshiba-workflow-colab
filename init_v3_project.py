@@ -16,7 +16,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding="utf-8")
 
 REPO = Path(__file__).resolve().parent
-TEMPL = REPO / "pipeline" / "houzhuang_xiaoji_v3"
+TEMPL = REPO / "pipeline" / "puti_xinqi"
 
 
 def main():
