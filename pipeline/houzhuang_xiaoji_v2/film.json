@@ -1,0 +1,236 @@
+{
+ "_comment": "後庄守護者：小吉的逆襲 - 原 repo 標準工業化管線",
+ "title": "後庄守護者：小吉的逆襲",
+ "repo_dir": "../..",
+ "voice_mode": "h3_ref",
+ "cine": "A cinematic live-action sci-fi tokusatsu film still, shot on Kodak Vision3 500T with anamorphic lenses at f/2.4. Warm southern Taiwan daylight streaming onto campus, crisp metallic highlights and deep volumetric shadows, shallow depth of field, natural 35mm film grain, 16:9 widescreen composition without black letterbox bars.",
+ "set_sentence": "Use the Houzhuang Elementary School environment from <image{n}> as the set, but strictly maintain structural continuity.",
+ "frame_suffix": " Masterpiece quality, cinematic lighting, sharp focus, 8k photorealistic. No watermark, no random floating artifacts, no Japanese text.",
+ "h3": {
+  "style": "a cinematic photorealistic live-action Taiwanese tokusatsu sci-fi mecha film, 35mm grain, natural daylight",
+  "setting": "Houzhuang Elementary School campus in Pingtung, Taiwan",
+  "soundscape": "Campus ambient room tone, mechanical servo hums, hydraulic valve hisses, distant thunder and heavy metal impacts.",
+  "camera": "The camera moves deliberately with steady tracking, pan, or holds stable on a cinematic tripod.",
+  "constraints": [
+   "Maintain 100% character and environmental continuity from <Picture 1>.",
+   "No random extra limbs, no mangled fingers, no floating text or subtitles on screen.",
+   "Keep mechanical mecha armor solid and rigid; paper carton textures stay realistic corrugated fiberboard."
+  ]
+ },
+ "chars": {
+  "huang": {
+   "name": "黃老師",
+   "look": "Teacher Huang, a warm energetic 45-year-old Taiwanese male elementary school art teacher with short neat black hair, friendly eyes, wearing a casual bright blue short-sleeve athletic t-shirt, dark sports shorts and comfortable sneakers. Exactly one adult male in the image, absolutely no other adults or assistants",
+   "voice_design": "A warm, inspiring Taiwanese male teacher in his mid-forties with a confident, encouraging voice, natural Taiwanese Mandarin accent.",
+   "voice_sample": "小吉，後庄國小是我們共同的家，就交給你守護了！",
+   "h3_voice": "a warm encouraging adult male teacher's voice",
+   "edge_voice": "zh-TW-YunJheNeural",
+   "sub_color": "&H00FFFFFF"
+  },
+  "xiaoji": {
+   "name": "小吉",
+   "look": "Xiaoji, a 150cm tall humanoid mecha robot handcrafted from heavy-duty yellow corrugated cardboard boxes, reinforced with silver duct tape joints, visible hydraulic tubes, glowing round amber camera eyes, and a sturdy front bulldozer scoop blade accessory mounted on chest and legs. Clean tokusatsu prop, no humans inside",
+   "voice_design": "A spirited, heroic mechanical young robot boy, bright and brave with slight metallic robotic resonance.",
+   "voice_sample": "收到！紙箱壓平！後庄由小吉來守護！",
+   "h3_voice": "a brave youthful boy robot voice with metallic resonance",
+   "edge_voice": "zh-CN-YunxiaNeural",
+   "sub_color": "&H0000E5FF"
+  },
+  "dahei": {
+   "name": "大黑",
+   "look": "Dahei, a terrifying 2.5-meter tall alien biomechanical titan forged from dark oily obsidian metal and sharp jagged armor, with a single sharp horn crest on head, glowing menacing crimson slit eyes, and a pulsing crimson vortex core on chest. Exactly the same single menacing mecha design",
+   "voice_design": "A monstrous deep alien villain with cavernous bass, metallic distortion and arrogant cruelty.",
+   "voice_sample": "哈哈！美味的髒亂！化成灰燼吧！",
+   "h3_voice": "a menacing deep alien robotic titan villain voice",
+   "edge_voice": "zh-CN-YunxiNeural",
+   "sub_color": "&H002020FF"
+  }
+ },
+ "masters": {
+  "art_room": "Cinematic wide establishing shot of Houzhuang Elementary School art classroom: wooden worktables, shelves filled with student craft supplies and cardboard cartons, large open windows on the left with warm golden sunlight slanting through dusty air, green chalkboard in the background. Clean, photorealistic, empty of people.",
+  "corridor": "Cinematic shot of Houzhuang Elementary School hallway and outdoor recycling station: neatly organized recycling bins for plastic, paper, and metal cans, red brick exterior walls, potted tropical green plants along the railing under bright morning sky. Empty, realistic.",
+  "campus_yard": "Cinematic wide angle of Houzhuang Elementary School main athletic ground and courtyard: red running track, lush green banyan trees, Taiwanese school building facade under dynamic overcast sky, dramatic storm clouds gathering above. Photorealistic, empty."
+ },
+ "shots": [
+  {
+   "id": "S01",
+   "refs": ["huang", "xiaoji"],
+   "scene": ["art_room", [0.0, 0.0, 1.0, 1.0]],
+   "dur": 4.8,
+   "line": {"who": "huang", "text": "小吉，後庄國小就交給你了！", "at": 0.5},
+   "frame": "Medium wide shot in the sunlit empty art classroom: Teacher Huang in bright blue athletic t-shirt smiles encouragingly and pats the shoulder of 150cm cardboard robot Xiaoji sitting on the worktable. Exactly one adult male (Teacher Huang) and robot Xiaoji in the room, absolutely no other adults or assistants.",
+   "action": "Starting from <Picture 1>, Teacher Huang pats Xiaoji's cardboard shoulder armor and smiles encouragingly. Xiaoji's round dark lens eyes light up with a warm golden glow; the cardboard robot slowly tilts its boxy head upward toward Teacher Huang and raises its right cardboard hand in a resolute mechanical salute.",
+   "cut_in": 0.0, "tail": 1.2
+  },
+  {
+   "id": "S02",
+   "refs": ["xiaoji"],
+   "scene": ["corridor", [0.1, 0.1, 0.9, 0.9]],
+   "dur": 4.5,
+   "line": {"who": "xiaoji", "text": "收到！紙箱工程卡車，出發！", "at": 0.6},
+   "frame": "Medium tracking shot at the campus recycling station: Xiaoji in yellow bulldozer vehicle mode, rolling smoothly on caterpillar tracks with front metal scoop pushing empty cardboard cartons into a tidy stack. No extraneous characters.",
+   "action": "Starting from <Picture 1>, the yellow cardboard bulldozer drives forward steadily across the concrete pavement, its front scoop lowering smoothly to push three flattened carton boxes into a neat pile against the recycling bin. As it brakes to a halt with a tiny puff of clean exhaust steam from its side pipes, its lens sensors blink cheerfully and its mechanical horn beeps twice.",
+   "cut_in": 0.0, "tail": 1.0
+  },
+  {
+   "id": "S03",
+   "refs": ["xiaoji"],
+   "scene": ["corridor", [0.15, 0.1, 0.85, 0.9]],
+   "dur": 4.5,
+   "line": {"who": "xiaoji", "text": "只要確實分類，核心永遠滿格！", "at": 0.6},
+   "frame": "Close-up of Xiaoji: children's hands gently patting its sturdy corrugated head, chest energy indicator glowing 100% full vibrant green light.",
+   "action": "Starting from <Picture 1>, Xiaoji stands tall and proud as schoolchildren smile and place neatly rinsed beverage cartons into its sorting compartment. Xiaoji's chest power meter glows with pulsing green luminous light, its internal servos humming with high-frequency energy, nodding its cardboard head happily up and down in appreciation.",
+   "cut_in": 0.0, "tail": 1.0
+  },
+  {
+   "id": "S04",
+   "refs": ["dahei"],
+   "scene": ["campus_yard", [0.0, 0.0, 1.0, 1.0]],
+   "dur": 4.8,
+   "line": null,
+   "frame": "Wide dramatic shot over Houzhuang Elementary campus: dark purple alien lightning splits the ominous sky, striking an overflowing pile of unseparated litter in the corner.",
+   "action": "Starting from <Picture 1>, a violent flash of jagged purple lightning crashes down from the dark swirling storm clouds straight into the unsegregated trash heap. An enormous shockwave of black metallic smoke and swirling oily embers erupts upward, blasting nearby litter bins aside as an alien energy fissure cracks open the ground.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S05",
+   "refs": ["dahei"],
+   "scene": ["campus_yard", [0.1, 0.1, 0.9, 0.9]],
+   "dur": 5.0,
+   "line": {"who": "dahei", "text": "哈哈！美味的髒亂！化成灰燼吧！", "at": 0.5},
+   "frame": "Low angle heroic-villain shot: the colossal 2.5-meter black metal mech Dahei steps out of purple smoke, heavy jagged fists clenching, eyes burning crimson red.",
+   "action": "Starting from <Picture 1>, the massive black obsidian robot Dahei stomps forward heavily through the dispersing smoke, shaking the concrete ground with each step. It raises both heavy spiked mechanical fists, throws its head back in a cruel echoing laugh, and flexes its jagged shoulder plating as its red visor flares with menacing crimson light.",
+   "cut_in": 0.0, "tail": 1.2
+  },
+  {
+   "id": "S06",
+   "refs": ["dahei"],
+   "scene": ["campus_yard", [0.15, 0.1, 0.85, 0.9]],
+   "dur": 4.8,
+   "line": null,
+   "frame": "Medium shot of Dahei: dirty unwashed meal boxes and plastic cups on the ground dissolving into black tentacles of smoke, sucked into Dahei's pulsing chest vortex.",
+   "action": "Starting from <Picture 1>, greasy disposable lunchboxes and unwashed milk tea bottles on the asphalt disintegrate into thick ribbons of purple-black smoke. Dahei's chest turbine spins furiously, vacuuming all the dark smog into its core; its metallic armor plates visibly expand and bulk up with ominous dark energy surges.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S07",
+   "refs": ["xiaoji"],
+   "scene": ["campus_yard", [0.1, 0.1, 0.9, 0.9]],
+   "dur": 5.0,
+   "line": {"who": "xiaoji", "text": "不准破壞後庄！極限變形——開！！", "at": 0.5},
+   "frame": "Dynamic low-angle transformation shot: Xiaoji in bulldozer mode screeches to a drift stop, the front scoop splitting in two and hydraulic piston struts slamming upright into bipedal combat mech.",
+   "action": "Starting from <Picture 1>, the yellow cardboard vehicle skids sharply across the ground, kicking up sparks. In a rapid mechanical unfolding, its front scoop splits into dual heavy forearm shields, heavy hydraulic pistons hiss and extend rapidly, lifting its reinforced cardboard torso upright into a formidable battle stance with glowing golden eyes locked on target.",
+   "cut_in": 0.0, "tail": 1.0
+  },
+  {
+   "id": "S08",
+   "refs": ["xiaoji", "dahei"],
+   "scene": ["campus_yard", [0.05, 0.05, 0.95, 0.95]],
+   "dur": 4.5,
+   "line": null,
+   "frame": "Fast action combat shot: Xiaoji leaps forward through the air with thrusters firing, delivering a crushing cardboard-hydraulic fist slam directly onto Dahei's vanguard clone armor, shattering it into smoking shards.",
+   "action": "Starting from <Picture 1>, Xiaoji propels forward in a supersonic lunge, driving its heavy reinforced corrugated fist straight into the chestplate of Dahei's vanguard clone. The impact detonates in a blinding burst of golden kinetic sparks, cracking the black armor into flying metal debris as the clone collapses in flames.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S09",
+   "refs": ["xiaoji", "dahei"],
+   "scene": ["campus_yard", [0.05, 0.05, 0.95, 0.95]],
+   "dur": 4.8,
+   "line": null,
+   "frame": "Crisis turnaround shot: dark smoke from nearby unsegregated trash cans surges into Dahei's damaged hull, instantly repairing the crack, Dahei retaliating with an earth-shattering shockwave punch that hurls Xiaoji backwards.",
+   "action": "Starting from <Picture 1>, a dense stream of polluted black energy pours from roadside trash cans into Dahei's fractured armor, instantly knitting the metal shut. With terrifying acceleration, Dahei counterattacks with a titanic hammer-fist blow, blasting the yellow cardboard robot backwards across the courtyard pavement with paper splinters fluttering in the air.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S10",
+   "refs": ["xiaoji"],
+   "scene": ["corridor", [0.1, 0.1, 0.9, 0.9]],
+   "dur": 4.8,
+   "line": {"who": "xiaoji", "text": "呃……可惡！他的力量……還在暴漲？！", "at": 0.6},
+   "frame": "Emotional damage shot: Xiaoji kneeling on one knee against the classroom brick wall, cardboard armor dented and smoking, hydraulic lines hissing white vapor, eye sensor lights flickering weakly.",
+   "action": "Starting from <Picture 1>, Xiaoji struggles on one knee against the red brick wall, its left cardboard shoulder armor caved in and leaking thin white steam from damaged hydraulic joints. It clutches its chest as its golden eye lights flicker erratically, coughing weakly while striving to push itself back up.",
+   "cut_in": 0.0, "tail": 1.2
+  },
+  {
+   "id": "S11",
+   "refs": ["xiaoji"],
+   "scene": ["campus_yard", [0.2, 0.1, 0.8, 0.9]],
+   "dur": 4.5,
+   "line": null,
+   "frame": "Extreme close-up on Xiaoji's optical lens: the glass reflection reveals Dahei's glowing chest power conduits directly tethered to littered unwashed lunchboxes on campus.",
+   "action": "Starting from <Picture 1>, Xiaoji's camera lens zooms and refocuses sharply. In the high-contrast optical reflection, a digital targeting HUD highlights Dahei's throbbing purple umbilical cables, confirming that the alien monster's regenerative shield is entirely fueled by scattered unwashed garbage.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S12",
+   "refs": ["xiaoji"],
+   "scene": ["campus_yard", [0.1, 0.1, 0.9, 0.9]],
+   "dur": 4.8,
+   "line": {"who": "xiaoji", "text": "站起來……！朋友們……把力量借給我！", "at": 0.5},
+   "frame": "Inspirational revival shot: Xiaoji grips the ground and forces itself upright, chest core reigniting into a brilliant radiant gold, clenching its fist directly toward the camera with unshakable resolve.",
+   "action": "Starting from <Picture 1>, Xiaoji grits its mechanical teeth and pushes up firmly with both hands, standing tall against the wind. Its chest core reignites with blinding golden sunlight energy, hydraulic pistons pumping with newfound power, thrusting its clenched fist forward toward the audience with blazing golden eyes.",
+   "cut_in": 0.0, "tail": 1.0
+  },
+  {
+   "id": "S13",
+   "refs": ["dahei"],
+   "scene": ["campus_yard", [0.05, 0.05, 0.95, 0.95]],
+   "dur": 4.8,
+   "line": null,
+   "frame": "Fast montage victory shot: Houzhuang Elementary students actively stomping aluminum cans and stacking carton boxes; Dahei roars in agony as its dark energy cut off, its black obsidian armor cracking and dissolving into white dust.",
+   "action": "Starting from <Picture 1>, as students across campus clean and sort every recycle bin, Dahei's purple chest core violently short-circuits. Deprived of trash energy, the titan screams in mechanical agony, clutching its head as widespread cracks fracture its black obsidian hull, shattering into harmless fading white dust particles.",
+   "cut_in": 0.0, "cut_out": "full"
+  },
+  {
+   "id": "S14",
+   "refs": ["huang", "xiaoji"],
+   "scene": ["campus_yard", [0.0, 0.0, 1.0, 1.0]],
+   "dur": 5.2,
+   "line": {"who": "huang", "text": "12月5日星期六，後庄國小校慶見！", "at": 0.5},
+   "frame": "Grand finale poster shot: Teacher Huang and the victorious robot Xiaoji stand proudly together side by side at Houzhuang Elementary School main entrance, smiling and waving warmly toward camera. Exactly one adult male (Teacher Huang in bright blue athletic t-shirt) and robot Xiaoji in the foreground, absolutely no other adult men.",
+   "action": "Starting from <Picture 1>, Teacher Huang and the restored robot Xiaoji stand center stage with hands on hips. Teacher Huang waves warmly toward the camera while Xiaoji raises both arms in a triumphant V-sign pose; festive school banners flutter proudly in the bright southern Taiwan sunshine as they invite the world.",
+   "cut_in": 0.0, "tail": 1.5
+  }
+ ],
+ "seeds": {
+  "frame_S01": 1001,
+  "frame_S05": 2005,
+  "frame_S07": 3007,
+  "frame_S14": 4014
+ },
+ "music": {
+  "caption": "Genre: Epic orchestral mecha battle film score, heroic tokusatsu brass theme, intense driving taiko and cinematic war drums, triumphant fanfare finish. BPM 132, key D minor to D major.\nVocal: NONE. No singing, no choir.\nArrangement: bold brass horns, dramatic strings staccato, heavy percussion, electric mecha synthesizer bass.",
+  "seeds": [77, 108, 999]
+ },
+ "mix": {
+  "say_lead": 0.15,
+  "default_tail": 1.0,
+  "music_under_lines": 0.22,
+  "target_lufs": -16.0
+ },
+ "ending": {
+  "title": "後庄守護者：小吉的逆襲",
+  "closeups": ["S01", "S07", "S14"],
+  "header": "本片製作名單與使用的 AI 工具",
+  "card_dur": 3.2,
+  "title_dur": 4.0,
+  "cards": [
+   [
+    ["導演／企劃", "屏東縣後庄國小 黃朝榮老師"],
+    ["角色原型", "紙箱人小吉、異星金屬巨神大黑"],
+    ["12 月 5 日（星期六）", "後庄國小校慶！熱烈歡迎光臨！"]
+   ],
+   [
+    ["MiniMax H3", "影片生成（Google Colab G4）"],
+    ["BreezyVoice / Breeze", "台詞與角色語音"],
+    ["MiniMax-Music 3", "史詩戰鬥原創配樂"]
+   ],
+   [
+    ["屏東縣後庄國小黃朝榮老師作品", "免費分享・歡迎擴散推廣"],
+    ["更多 Puti-AI 教學工具", "請至 Padlet 專區點此前往"],
+    ["本片畫面、配音與配樂", "皆由 AI 輔助生成"]
+   ]
+  ]
+ }
+}

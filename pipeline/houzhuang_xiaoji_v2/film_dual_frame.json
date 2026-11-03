@@ -1,0 +1,26 @@
+{
+ "_comment": "後庄守護者：小吉的逆襲 - 完整前後幀 (First & Last Frame) 工業管線設定",
+ "title": "後庄守護者：小吉的逆襲",
+ "repo_dir": "../..",
+ "voice_mode": "h3_ref",
+ "ref_assets": {
+  "xiaoji_sheet": "C:/antigravity/影片/小吉與大黑/assets/xiaoji_character_sheet.jpg",
+  "dahei_master": "C:/antigravity/影片/shanshiba-workflow-colab/pipeline/houzhuang_xiaoji/out/chars/dahei.png"
+ },
+ "shots": [
+  {"id": "S01", "first": "out/first/S01.png", "last": "out/last/S01.png", "line": {"who": "huang", "text": "小吉，後庄國小就交給你了！"}},
+  {"id": "S02", "first": "out/first/S02.png", "last": "out/last/S02.png", "line": {"who": "xiaoji", "text": "收到！紙箱工程卡車，出發！"}},
+  {"id": "S03", "first": "out/first/S03.png", "last": "out/last/S03.png", "line": {"who": "xiaoji", "text": "只要確實分類，核心永遠滿格！"}},
+  {"id": "S04", "first": "out/first/S04.png", "last": "out/last/S04.png", "line": null},
+  {"id": "S05", "first": "out/first/S05.png", "last": "out/last/S05.png", "line": {"who": "dahei", "text": "哈哈！美味的髒亂！化成灰燼吧！"}},
+  {"id": "S06", "first": "out/first/S06.png", "last": "out/last/S06.png", "line": null},
+  {"id": "S07", "first": "out/first/S07.png", "last": "out/last/S07.png", "line": {"who": "xiaoji", "text": "不准破壞後庄！極限變形——開！！"}},
+  {"id": "S08", "first": "out/first/S08.png", "last": "out/last/S08.png", "line": null},
+  {"id": "S09", "first": "out/first/S09.png", "last": "out/last/S09.png", "line": null},
+  {"id": "S10", "first": "out/first/S10.png", "last": "out/last/S10.png", "line": {"who": "xiaoji", "text": "呃……可惡！他的力量……還在暴漲？！"}},
+  {"id": "S11", "first": "out/first/S11.png", "last": "out/last/S11.png", "line": {"who": "all", "text": "小吉！加油！我們來分類！"}},
+  {"id": "S12", "first": "out/first/S12.png", "last": "out/last/S12.png", "line": {"who": "xiaoji", "text": "站起來……！朋友們……把力量借給我！"}},
+  {"id": "S13", "first": "out/first/S13.png", "last": "out/last/S13.png", "line": null},
+  {"id": "S14", "first": "out/first/S14.png", "last": "out/last/S14.png", "line": {"who": "huang", "text": "12月5日星期六，後庄國小校慶見！"}}
+ ]
+}

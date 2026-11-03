@@ -1,0 +1,175 @@
+"""V3 film.json 產生器：從零寫，不繼承 V1/V2 任何參數。
+角色描述、action 全部依實際分鏡圖（out/first、out/last）重寫。"""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+STYLE = ("a vibrant 3D animated family feature film, stylized Pixar-like CG cartoon rendering, "
+         "soft global illumination, saturated colors, smooth clean toon shading")
+CONSTRAINTS = [
+    "Maintain the exact 3D cartoon animation style, vibrant toon shading, and stylized CG proportions of <Picture 1> in every single frame.",
+    "Every character keeps the exact same 3D cartoon design, colors, and proportions as in <Picture 1> from the first frame to the last frame.",
+    "Keep all surfaces clean, solid, and consistent with a stylized 3D animated family film.",
+    "Keep all character limbs, hands, and cardboard mecha parts solid and well-formed.",
+]
+
+CHARS = {
+    "huang": dict(
+        name="黃老師", sub_color="&H00FFFFFF",
+        look="Teacher Huang, a 3D cartoon Taiwanese male elementary school teacher with short grey-black hair, "
+             "round black-rimmed glasses, a friendly smile, a navy-blue T-shirt and black shorts",
+        h3_voice="a warm, cheerful middle-aged Taiwanese male teacher's voice, expressive and lively, natural Taiwanese Mandarin"),
+    "xiaoji": dict(
+        name="小吉", sub_color="&H0000E5FF",
+        look="Xiaoji, a 3D cartoon robot built from yellow-orange corrugated cardboard boxes with black tape patches, "
+             "a square box head with two tall thin black antennas, two large oval eyes that glow when active, "
+             "a small round O-shaped mouth, a small silver cooling fan on its right shoulder, chunky boxy arms and legs; "
+             "it can fold into a six-wheeled yellow cardboard bulldozer truck with a front blade",
+        h3_voice="a bright, energetic young boy-robot voice, heroic and highly expressive, with a faint metallic ring"),
+    "xiaoji_truck": dict(
+        name="小吉", sub_color="&H0000E5FF",
+        look="Xiaoji in bulldozer truck mode, a 3D cartoon six-wheeled yellow-orange corrugated cardboard engineering truck "
+             "with black tape patches, a wide front bulldozer scoop blade, six chunky black rubber wheels, and a boxy cab "
+             "with two tall thin black antennas and two glowing oval eyes",
+        h3_voice="a bright, energetic young boy-robot voice, heroic and highly expressive, with a faint metallic ring"),
+    "dahei": dict(
+        name="大黑", sub_color="&H00C080FF",
+        look="Dahei, a giant 3D cartoon villain mecha made of jagged black and dark-grey armor blocks, glowing red eyes, "
+             "a swirling purple energy core in the middle of its chest, purple lightning crackling around its body",
+        h3_voice="a deep, booming, slow villain voice, menacing and gleeful, with a cruel rolling laugh"),
+    "kids": dict(
+        name="學生", sub_color="&H00FFFFFF",
+        look="Houzhuang Elementary pupils, 3D cartoon Taiwanese children in school PE shirts colored red-and-yellow "
+             "or blue-and-yellow, with shorts",
+        h3_voice="cheerful young children's voices"),
+}
+
+
+def shot(id, refs, dur, action, camera, use_last, line=None, tail=1.0):
+    d = dict(id=id, refs=refs, dur=dur, action=action, camera=camera, use_last=use_last, cut_in=0.0)
+    if line:
+        d["line"] = dict(who=line[0], text=line[1], at=0.6)
+        d["tail"] = tail
+    else:
+        d["line"] = None
+        d["cut_out"] = "full"
+    return d
+
+
+SHOTS = [
+    shot("S01", ["huang", "xiaoji"], 6.5,
+         "Starting from <Picture 1>, Teacher Huang keeps his right hand on Xiaoji's cardboard shoulder, leans in slightly and "
+         "speaks with a proud, trusting smile, giving two firm pats on the shoulder and a small nod. Xiaoji's oval eyes light up "
+         "bright orange, its box head tilts up toward the teacher, its antennas wobble, and it raises its right hand to its "
+         "forehead in a crisp salute. Teacher Huang steps back half a step and gives a thumbs-up.",
+         "The camera slowly pushes in from a medium shot.", False, ("huang", "小吉，後庄國小就交給你了！"), 1.2),
+    shot("S02", ["xiaoji"], 6.5,
+         "Starting from <Picture 1>, Xiaoji straightens up among the cardboard piles, its eyes flash orange and it shouts the line "
+         "eagerly. Right after, it folds down in one continuous transformation: its arms swing forward and lock into a wide front "
+         "bulldozer blade, its legs fold back into six chunky black wheels, and its torso flattens into a truck bed. The finished "
+         "yellow cardboard truck rolls forward half a meter and a small white puff of steam pops from its side.",
+         "The camera tracks sideways slowly at the robot's height.", True, ("xiaoji", "收到！紙箱工程卡車，出發！"), 1.0),
+    shot("S03", ["kids", "xiaoji"], 6.5,
+         "Starting from <Picture 1>, the girl in the red-and-yellow shirt drops her plastic bottle into Xiaoji's chest box, picks up "
+         "another one and drops it too, then bounces on her toes. The boy in the blue-and-yellow shirt pushes his bottle in, "
+         "looks up at Xiaoji and waves both hands happily. Both children turn their heads toward each other and laugh. Xiaoji's "
+         "eyes switch to glowing green, its shoulder fan spins faster, and it nods its box head twice while speaking proudly.",
+         "The camera holds a static shot on a tripod.", False, ("xiaoji", "只要確實分類，核心永遠滿格！"), 1.0),
+    shot("S04", [], 5.5,
+         "Starting from <Picture 1>, the dark purple storm clouds over the school sports field churn and swirl faster. A thick "
+         "jagged bolt of purple lightning cracks down and strikes the pile of mixed garbage beside the track. The pile bursts "
+         "with a purple flash, a tall column of black smoke rolls upward, and small pieces of trash and plastic bags are thrown "
+         "across the red running track while the tree branches whip in the wind.",
+         "The camera holds a static wide shot on a tripod.", True),
+    shot("S05", ["dahei"], 6.5,
+         "Starting from <Picture 1>, the giant villain Dahei rises out of the purple clouds and takes one heavy step forward. "
+         "The purple core in its chest pulses brighter three times. It throws its head back and laughs, then clenches both huge "
+         "fists and lifts them up beside its head while shouting the line with cruel glee. Purple lightning crackles across its "
+         "black armor blocks and small rocks bounce on the ground with every movement.",
+         "The camera slowly tilts up from a low angle.", True, ("dahei", "哈哈！美味的髒亂！化成灰燼吧！"), 1.2),
+    shot("S06", ["dahei"], 5.5,
+         "Starting from <Picture 1>, Dahei stretches its left arm toward the litter along the wet walkway. A river of black oily "
+         "sludge, crushed lunch boxes and plastic cups is sucked along the ground toward its open palm in a swirling stream. "
+         "The purple core in its chest spins and glows brighter, purple veins of light spread across its armor, and the "
+         "pavement cracks open under the stream.",
+         "The camera holds a static shot on a tripod.", True),
+    shot("S07", ["xiaoji", "dahei"], 6.5,
+         "Starting from <Picture 1>, little Xiaoji plants its feet in front of the giant Dahei, points at it and shouts the line "
+         "with fierce determination, its eyes blazing orange. On the last word it jumps into a transformation: its arms swing "
+         "forward and lock together into a big yellow bulldozer blade held like a shield, steam bursts from its joints, and it "
+         "drops into a low battle stance. Dahei leans forward and glares with its red eyes.",
+         "The camera holds a static wide shot on a tripod.", True, ("xiaoji", "不准破壞後庄！極限變形——開！！"), 1.0),
+    shot("S08", ["xiaoji_truck", "dahei"], 5.5,
+         "Starting from <Picture 1>, the yellow cardboard bulldozer truck Xiaoji charges forward at full speed from the left, its six black wheels "
+         "spinning fast and throwing up gravel. Giant Dahei swings one huge clawed arm down, and the truck's wide yellow front blade slams straight into "
+         "Dahei's leg armor, bursting with bright orange sparks and flying black armor chips as Dahei staggers back.",
+         "The camera holds a wide low-angle action shot.", True),
+    shot("S09", ["xiaoji_truck", "dahei"], 5.5,
+         "Starting from <Picture 1>, giant Dahei bends down and grabs the front blade of the yellow cardboard bulldozer truck with its huge dark hand, "
+         "lifts the six-wheeled truck off the ground and hurls it high into the air to the upper left. The yellow cardboard truck flies upward with its six wheels "
+         "spinning while rocks and purple sparks scatter below as Dahei roars.",
+         "The camera holds a static wide low-angle shot.", True),
+    shot("S10", ["xiaoji"], 7.0,
+         "Starting from <Picture 1>, Xiaoji lies face down on the wet ground with its eyes dark. Its eyes flicker weakly, it "
+         "groans and slowly presses both cardboard hands against the ground. Trembling, it pushes its upper body up, gasping "
+         "between words, its head lifting toward the off-screen giant, eyes widening in shock as they glow orange again. A "
+         "thin trail of smoke rises from its dented back.",
+         "The camera slowly pushes in at ground level.", True, ("xiaoji", "呃……可惡！他的力量……還在暴漲？！"), 1.2),
+    shot("S11", ["huang", "kids"], 5.5,
+         "Starting from <Picture 1>, Teacher Huang and the four pupils quickly sort recycling: the children toss plastic "
+         "bottles into the blue bin, flatten cardboard and stack it, and the teacher hands a box to a boy. As each item lands "
+         "in the right bin, streams of golden sparkling light rise from the bins and spiral through the air toward the "
+         "distant yellow robot in the background. The children look up at the golden light with amazement.",
+         "The camera holds a static wide shot on a tripod.", True),
+    shot("S12", ["xiaoji"], 7.0,
+         "Starting from <Picture 1>, golden light streams and flying bottles and cardboard pieces swirl around Xiaoji and sink "
+         "into its body. Its whole cardboard body begins to glow brighter gold. Xiaoji struggles at first, then straightens up "
+         "with growing determination, speaking the line from strained to powerful, and on the last words it thrusts its "
+         "glowing right fist high toward the sky, its eyes blazing gold.",
+         "The camera slowly tilts up from a low angle.", True, ("xiaoji", "站起來……！朋友們……把力量借給我！"), 1.0),
+    shot("S13", ["dahei"], 5.5,
+         "Starting from <Picture 1>, cracks of purple light split across Dahei's black armor. It clutches its chest as the "
+         "purple core flickers and dies. Its armor blocks break apart and burst into countless sparkling white particles that "
+         "drift away on the wind. The purple storm clouds pull apart, and bright blue sky and warm sunlight pour down over the "
+         "school as the last glittering particles float away.",
+         "The camera holds a static wide shot on a tripod.", True),
+    shot("S14", ["huang", "xiaoji", "kids"], 6.5,
+         "Starting from <Picture 1>, under the festive red school banner, Teacher Huang raises both arms and announces the line "
+         "with a big excited smile, looking straight at the camera. The four children jump up and down cheering and wave their "
+         "arms. Xiaoji raises one arm and makes a V-sign with its other hand, its eyes glowing happily. Colorful pennant flags "
+         "flutter in the breeze above them.",
+         "The camera holds a static shot on a tripod.", True, ("huang", "12月5日星期六，後庄國小校慶見！"), 1.5),
+]
+
+FILM = {
+    "_comment": "V3：從零重寫。3D 卡通風格、非 draft、首尾幀依鏡頭分型、H3 自己演＋V1 音色參考",
+    "title": "後庄守護者：小吉的逆襲",
+    "repo_dir": "../..",
+    "voice_mode": "h3_ref",
+    "h3": {
+        "style": STYLE,
+        "setting": "Houzhuang Elementary School campus in Pingtung, Taiwan, as a 3D cartoon set",
+        "draft": False,
+        "steps": 14,
+        "default_seed": 31415,
+        "soundscape": "Outdoor school campus ambience with matching sound effects for the on-screen action.",
+        "camera": "The camera holds a static shot on a tripod.",
+        "constraints": CONSTRAINTS,
+    },
+    "chars": CHARS,
+    "shots": SHOTS,
+    "seeds": {f"h3_{s['id']}": 31415 + 101 * i for i, s in enumerate(SHOTS)},
+    "music": {
+        "caption": "Genre: Heroic animated family adventure film score, bright orchestral superhero theme, driving drums, "
+                   "playful woodwinds, tense battle middle section, triumphant brass finale. BPM 128.\n"
+                   "Vocal: NONE. No singing, no choir.\n"
+                   "Arrangement: brass fanfares, staccato strings, taiko and orchestral percussion, glockenspiel sparkles.",
+        "seeds": [11, 42, 88],
+    },
+    "mix": {"say_lead": 0.0, "default_tail": 1.0, "music_under_lines": 0.25, "target_lufs": -16.0},
+    "ending": {"custom": True},
+}
+
+(HERE / "film.json").write_text(json.dumps(FILM, ensure_ascii=False, indent=1), encoding="utf-8")
+print("film.json written:", len(SHOTS), "shots")
