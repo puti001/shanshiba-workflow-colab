@@ -1,0 +1,345 @@
+{
+  "_comment": "V3 海洋未來式: 14個鏡頭(S01~S14)，含精準尾幀與電影級動態運鏡",
+  "title": "海洋未來式 第3集：玩具怪獸與微塑膠",
+  "episode_id": "ep03",
+  "total_shots": 14,
+  "total_images_required": 15,
+  "image_manifest": {
+    "first_frames_14": [
+      "out/first/S01.png",
+      "out/first/S02.png",
+      "out/first/S03.png",
+      "out/first/S04.png",
+      "out/first/S05.png",
+      "out/first/S06.png",
+      "out/first/S07.png",
+      "out/first/S08.png",
+      "out/first/S09.png",
+      "out/first/S10.png",
+      "out/first/S11.png",
+      "out/first/S12.png",
+      "out/first/S13.png",
+      "out/first/S14.png"
+    ],
+    "last_frames": [
+      "out/last/S02.png"
+    ]
+  },
+  "repo_dir": "../..",
+  "voice_mode": "h3_ref",
+  "h3": {
+    "style": "a vibrant 2D cel-shaded animated feature film, clean bold line art, deep ocean cyan and warm gallery spotlight illumination, rich harmonious colors, smooth cartoon toon shading",
+    "setting": "National Museum of Marine Science and Technology exhibition gallery with towering curved ocean projection screens and high-tech climate displays, as an animated cartoon set",
+    "draft": false,
+    "steps": 14,
+    "default_seed": 202611,
+    "soundscape": "Immersive deep sea ambient hum with gentle water resonance, museum footsteps, and crisp electronic data pulses.",
+    "camera": "Cinematic camera movement with smooth tracking, push-in, arc orbiting, and dynamic focal depth.",
+    "constraints": [
+      "Maintain the exact cartoon animation style, clean bold outlines, and character proportions of <Picture 1> in every single frame.",
+      "Every character keeps the exact same cartoon design, clothing colors, and robot markings as in <Picture 1> from the first frame to the last frame.",
+      "Keep all museum exhibition screens, glass pedestals, and climate graphics solid, stable, and consistent with <Picture 1>.",
+      "Keep all character limbs, hands, glasses, antennas, and facial features clean and well-formed."
+    ]
+  },
+  "chars": {
+    "huang": {
+      "name": "黃老師",
+      "sub_color": "&H00FFFFFF",
+      "look": "Teacher Huang, a cartoon Taiwanese male museum volunteer teacher with short grey-black hair, round black-rimmed glasses, a warm friendly smile, a burgundy volunteer vest over a white short-sleeve shirt, dark prayer beads on his left wrist, and black trousers",
+      "h3_voice": "a warm, expressive middle-aged Taiwanese male teacher voice, clear and lively, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_huang.wav"
+    },
+    "xiaoji": {
+      "name": "小吉",
+      "sub_color": "&H0000E5FF",
+      "look": "Xiaoji (GiGi), a cartoon robot with a smooth round golden-yellow helmet with Puti-AI text on the forehead, large oval glowing cyan visor eyes on a dark screen face, circular cyan glowing ear discs, chunky golden-yellow armor, a small chest screen displaying GiGi, dark-grey mechanical joints, and a small backpack with a glowing cyan energy cell",
+      "h3_voice": "a bright, energetic young boy-robot voice, heroic and highly expressive, with a faint metallic ring, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_xiaoji.wav"
+    }
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S01.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Extreme wide establishing crane shot descending into a mechanical monster zone.",
+      "action": "Starting from <Picture 1>, Xiaoji stands dwarfed beneath a colossal 8-meter kinetic sculpture of an Ocean Waste Monster made of discarded toy parts, fishing nets, and plastic bottles, its mechanical mouth slowly champing.",
+      "first_frame_prompt": "Wide establishing shot, 2D anime style. Xiaoji standing in awe before a gigantic mechanical monster sculpture assembled from discarded plastic toys, bright neon gears, and old fishing nets in a science museum hall, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "哇！這隻怪獸肚子裡全是黃色小鴨和樂高積木！牠是吃玩具長大的嗎？",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S02",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S02.png",
+      "use_last": true,
+      "last_frame": "out/last/S02.png",
+      "camera": "Medium 45-degree side profile locking onto the mechanical pinball lever.",
+      "action": "Starting from <Picture 1> and ending at <Picture 2>, Xiaoji exerts continuous downward force with both hands, smoothly pulling the metal pinball plunger handle from chest height straight down to waist level, compressing the heavy steel spring with metallic tension.",
+      "first_frame_prompt": "Medium 45-degree side profile shot, 2D anime style. Xiaoji gripping a giant shiny chrome pinball plunger lever at chest level with both hands, preparing to pull downwards, neon pinball ramp in background, 16:9.",
+      "last_frame_prompt": "Maintain exact same 45-degree side profile angle and Xiaoji character from <Picture 1>. Xiaoji does NOT turn around. Xiaoji has pulled the metal plunger completely downward to his waist, heavy spring tightly compressed and glowing under UV light, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "看我的強力彈射！發射微塑膠顆粒！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S03",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S03.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Over-the-shoulder tracking dolly toward Teacher Huang.",
+      "action": "Starting from <Picture 1>, Teacher Huang walks up beside the pinball maze, pointing to the illuminated glass tubes where tiny colored plastic pellets trickle into miniature food chain dioramas.",
+      "first_frame_prompt": "Medium over-the-shoulder shot, 2D anime style. Teacher Huang in burgundy volunteer vest pointing toward glowing acrylic pipes filled with tiny microplastic beads circulating into fish model displays, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "掉進海裡的塑膠不會消失，日曬海浪拍打後，碎成比米粒還小的微塑膠！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S04",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S04.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "High-magnification microscope perspective.",
+      "action": "Starting from <Picture 1>, Xiaoji peers into a giant digital electron microscope lens, his visor magnifying tiny glowing synthetic fibers and polymer fragments drifting like toxic stars.",
+      "first_frame_prompt": "Close-up perspective, 2D anime style. Xiaoji looking into a glowing scientific microscope eyepiece, holographic overlay of fluorescent microplastic fibers and beads floating, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "這麼小！肉眼根本看不見，魚蝦會把牠們當成浮游生物吃下去吧？",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S05",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S05.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Medium pan tracking fish food web diagram.",
+      "action": "Starting from <Picture 1>, Teacher Huang steps alongside an interactive marine food pyramid screen, highlighting how plankton is eaten by fish, and fish are caught for seafood markets.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang gesturing at an interactive illuminated marine food web diagram showing bioaccumulation from plankton to tuna, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "正是如此！浮游生物吃了塑膠，小魚吃浮游生物，最後全上了人類餐桌！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S06",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S06.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Extreme close-up on Xiaoji's glowing visor.",
+      "action": "Starting from <Picture 1>, Xiaoji taps his stomach plate as warning sirens sound softly in his audio processor, animated green crossbones appearing humorously on his chest screen.",
+      "first_frame_prompt": "Close-up shot, 2D anime style. Xiaoji looking nervous, clutching his golden belly plate, comic animated warning crossbones symbol on his chest display, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "天啊！那我剛吃的那盤綜合海鮮丼，豈不是有滿滿的塑膠加料？！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S07",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S07.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Eye-level medium shot with gentle slow push-in.",
+      "action": "Starting from <Picture 1>, Teacher Huang holds up an everyday reusable cotton tote and a stainless steel water bottle, his voice sincere and grounded.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang holding up a canvas tote bag and stainless steel reusable flask with an inspiring smile, museum exhibit backdrop, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "平均每人每週可能吃進一張信用卡重量的微塑膠！源頭減量才是唯一解法。",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S08",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S08.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Low-angle medium shot.",
+      "action": "Starting from <Picture 1>, Xiaoji nods resolutely, pulling out a reusable silicone snack bag from his small robot backpack to show the teacher.",
+      "first_frame_prompt": "Low-angle medium shot, 2D anime style. Xiaoji proudly showing a bright turquoise reusable silicone snack bag from his backpack, bright confident smile on visor, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "好險我出門都自備環保盒跟水壺！怪獸休想把塑膠塞進我肚子裡！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S09",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S09.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Wide tracking shot through a tunnel of recycled bottle art.",
+      "action": "Starting from <Picture 1>, Teacher Huang walks alongside Xiaoji through an illuminated archway made of recycled ocean plastics, glowing softly in cyan and violet.",
+      "first_frame_prompt": "Wide dynamic shot, 2D anime style. Teacher Huang and Xiaoji walking under an illuminated cathedral archway constructed from recycled ocean glass and plastic art, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "你看這座拱門，都是海廢再生造出來的藝術品。垃圾放對地方就是資源！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S10",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S10.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Medium close-up tracking Xiaoji's hands.",
+      "action": "Starting from <Picture 1>, Xiaoji gently touches the smooth recycled ocean tile surface, admiring its marble-like blue and white swirled patterns.",
+      "first_frame_prompt": "Medium close-up, 2D anime style. Xiaoji's yellow robotic fingers touching a beautifully swirled blue-and-white recycled ocean plastic tile, ambient light reflections, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "哇！摸起來好光滑，比剛買的新玩具還要酷炫漂亮！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S11",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S11.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Medium chest shot with warm gallery depth of field.",
+      "action": "Starting from <Picture 1>, Teacher Huang smiles warmly, adjusting his glasses as he gestures toward the upcoming eco-supermarket exhibit.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang smiling warmly with glasses, pointing ahead toward a brightly lit futuristic supermarket exhibit, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "只要少用一次性包裝，海洋生物就能少吞下一顆致命碎片。",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S12",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S12.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Dynamic Dutch angle push-in.",
+      "action": "Starting from <Picture 1>, Xiaoji pumps both fists in the air, his golden backpack lights pulsing rhythmically with determination.",
+      "first_frame_prompt": "Dynamic Dutch angle, 2D anime style. Xiaoji pumping both fists enthusiastically in the air, golden armor shining under spotlight, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "從今天起，我就是零塑膠特派員！誰都別想亂丟吸管！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S13",
+      "refs": [
+        "huang",
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S13.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Tracking two-shot moving alongside the pair.",
+      "action": "Starting from <Picture 1>, Teacher Huang and Xiaoji step forward in sync toward a vibrant portal marked 'Future Supermarket & Blue Carbon'.",
+      "first_frame_prompt": "Wide two-shot, 2D anime style. Teacher Huang and Xiaoji stepping forward side-by-side toward a luminous green and blue futuristic portal, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "走，帶你去看看海洋真正的超級吸碳英雄與未來的低碳超市！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S14",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S14.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Pass-by crane boom-up and tilt-down revealing full labyrinth.",
+      "action": "Starting from <Picture 1>, camera begins at ground level pointing upward as Xiaoji rushes forward past the lens. As Xiaoji passes underneath, the camera rapidly cranes upward vertically to 10 meters height, tilting downward 90 degrees to reveal a bird's-eye view of the entire microplastic pinball labyrinth illuminated below.",
+      "first_frame_prompt": "Ground-level low-angle action shot, 2D anime style. Xiaoji running forward directly over camera position at high speed, luminous kinetic sculpture arches towering overhead, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "太棒了！我要把未來的環保菜單通通記在我的晶片裡！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    }
+  ]
+}

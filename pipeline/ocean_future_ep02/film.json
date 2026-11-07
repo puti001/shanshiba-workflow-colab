@@ -1,0 +1,344 @@
+{
+  "_comment": "V3 海洋未來式: 14個鏡頭(S01~S14)，含精準尾幀與電影級動態運鏡",
+  "title": "海洋未來式 第2集：海底居民的性別危機",
+  "episode_id": "ep02",
+  "total_shots": 14,
+  "total_images_required": 15,
+  "image_manifest": {
+    "first_frames_14": [
+      "out/first/S01.png",
+      "out/first/S02.png",
+      "out/first/S03.png",
+      "out/first/S04.png",
+      "out/first/S05.png",
+      "out/first/S06.png",
+      "out/first/S07.png",
+      "out/first/S08.png",
+      "out/first/S09.png",
+      "out/first/S10.png",
+      "out/first/S11.png",
+      "out/first/S12.png",
+      "out/first/S13.png",
+      "out/first/S14.png"
+    ],
+    "last_frames": [
+      "out/last/S06.png"
+    ]
+  },
+  "repo_dir": "../..",
+  "voice_mode": "h3_ref",
+  "h3": {
+    "style": "a vibrant 2D cel-shaded animated feature film, clean bold line art, deep ocean cyan and warm gallery spotlight illumination, rich harmonious colors, smooth cartoon toon shading",
+    "setting": "National Museum of Marine Science and Technology exhibition gallery with towering curved ocean projection screens and high-tech climate displays, as an animated cartoon set",
+    "draft": false,
+    "steps": 14,
+    "default_seed": 202611,
+    "soundscape": "Immersive deep sea ambient hum with gentle water resonance, museum footsteps, and crisp electronic data pulses.",
+    "camera": "Cinematic camera movement with smooth tracking, push-in, arc orbiting, and dynamic focal depth.",
+    "constraints": [
+      "Maintain the exact cartoon animation style, clean bold outlines, and character proportions of <Picture 1> in every single frame.",
+      "Every character keeps the exact same cartoon design, clothing colors, and robot markings as in <Picture 1> from the first frame to the last frame.",
+      "Keep all museum exhibition screens, glass pedestals, and climate graphics solid, stable, and consistent with <Picture 1>.",
+      "Keep all character limbs, hands, glasses, antennas, and facial features clean and well-formed."
+    ]
+  },
+  "chars": {
+    "huang": {
+      "name": "黃老師",
+      "sub_color": "&H00FFFFFF",
+      "look": "Teacher Huang, a cartoon Taiwanese male museum volunteer teacher with short grey-black hair, round black-rimmed glasses, a warm friendly smile, a burgundy volunteer vest over a white short-sleeve shirt, dark prayer beads on his left wrist, and black trousers",
+      "h3_voice": "a warm, expressive middle-aged Taiwanese male teacher voice, clear and lively, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_huang.wav"
+    },
+    "xiaoji": {
+      "name": "小吉",
+      "sub_color": "&H0000E5FF",
+      "look": "Xiaoji (GiGi), a cartoon robot with a smooth round golden-yellow helmet with Puti-AI text on the forehead, large oval glowing cyan visor eyes on a dark screen face, circular cyan glowing ear discs, chunky golden-yellow armor, a small chest screen displaying GiGi, dark-grey mechanical joints, and a small backpack with a glowing cyan energy cell",
+      "h3_voice": "a bright, energetic young boy-robot voice, heroic and highly expressive, with a faint metallic ring, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_xiaoji.wav"
+    }
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S01.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Low-angle dynamic tracking shot pushing into a glowing incubator zone.",
+      "action": "Starting from <Picture 1>, Xiaoji crouches with glowing cyan visor eyes widened in excitement, tapping his metal fingertips against the transparent warm glass incubator filled with sand as tiny glowing baby sea turtles stir beneath the heat lamps.",
+      "first_frame_prompt": "Low-angle medium shot, 2D anime animation style. Xiaoji (cartoon robot with golden-yellow helmet, glowing cyan visor eyes) excitedly crouched beside a futuristic transparent glass sandy incubator. Tiny baby green sea turtles crawling under warm orange incubation heat lamps. Futuristic museum exhibit setting, 16:9 widescreen.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "黃老師快看！這堆沙子底下有好多綠蠵龜寶寶要破殼了！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S02",
+      "refs": [
+        "huang",
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S02.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Over-the-shoulder slow pan from Xiaoji to Teacher Huang.",
+      "action": "Starting from <Picture 1>, Teacher Huang walks in gracefully, his burgundy volunteer vest catching the soft exhibition light. He smiles gently and points toward the illuminated temperature-dependent sex determination diagram floating on the glass panel.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang with round glasses and burgundy vest standing beside Xiaoji, pointing towards a floating holographic diagram showing sea turtle eggs and temperature graphs in a high-tech science gallery, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "小吉，海龜可沒有染色體決定男女喔，牠們的性別全靠沙灘的溫度決定！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S03",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S03.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Tight facial close-up with subtle Dutch angle tilt.",
+      "action": "Starting from <Picture 1>, Xiaoji tilts his golden helmet 30 degrees in comical confusion, cyan question mark icons blinking across his visor screen as he raises a yellow mechanical forearm to scratch his chin.",
+      "first_frame_prompt": "Close-up shot, 2D anime style. Xiaoji looking puzzled, yellow robot helmet tilted with glowing cyan question marks on visor screen, bright museum background bokeh, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "咦？溫度還能管性別？熱一點會變成男生還是女生呀？",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S04",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S04.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Chest-level medium shot with gentle slow push-in.",
+      "action": "Starting from <Picture 1>, Teacher Huang raises two fingers warmly, his glasses reflecting the cyan temperature scale. He speaks with an educational yet playful cadence as graphic icons of hot pink and cool blue turtles orbit subtly.",
+      "first_frame_prompt": "Medium chest shot, 2D anime style. Teacher Huang smiling warmly with glasses, gesturing with two fingers, high-tech animated science background with temperature symbols, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "記住口訣：熱成母的、冷成公的！二十九度剛好各半，但超過三十一度...",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S05",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S05.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Frontal close-up with sudden shocked zoom.",
+      "action": "Starting from <Picture 1>, Xiaoji's visor eyes flash bright yellow warning pulses as he clenches his robotic hands in shock, leaning forward with mouth opening in surprise.",
+      "first_frame_prompt": "Close-up front shot, 2D anime style. Xiaoji shocked with amber warning lights flashing on his visor, yellow robot hands clenched, vivid anime expression, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "超過三十一度會怎樣？全部變成女孩子嗎？！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S06",
+      "refs": [],
+      "dur": 6.5,
+      "first_frame": "out/first/S06.png",
+      "use_last": true,
+      "last_frame": "out/last/S06.png",
+      "camera": "Tight macro lock-on sliding vertically upwards.",
+      "action": "Starting from <Picture 1> and moving toward <Picture 2>, Teacher Huang's gloved finger smoothly slides up along the thermometer gauge from 29.0°C to 31.0°C. The display smoothly turns from tranquil green to intense neon red alert glow.",
+      "first_frame_prompt": "Macro close-up shot, 2D anime animation style. A sandy scientific thermometer embedded in sea turtle nesting sand. The reading displays '29.0°C' in calm green glow. Teacher Huang's gloved finger points at the 29°C mark from bottom. 16:9 widescreen.",
+      "last_frame_prompt": "Keep exact same macro camera angle, background, and gloved finger from <Picture 1>. Do not rotate. The gloved finger slides upward to point at '31.0°C'. The digital gauge now glows intense crimson red reading '31.0°C - 100% FEMALE ALERT'. 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "沒錯！大堡礁部分沙灘因為太熱，孵出來九成九以上全是母龜！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S07",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S07.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Eye-level medium shot with dramatic slow dolly-out.",
+      "action": "Starting from <Picture 1>, Xiaoji holds both sides of his golden helmet, shaking his head with exaggerated anime despair as digital tears flicker on his visor screen.",
+      "first_frame_prompt": "Medium eye-level shot, 2D anime style. Xiaoji gripping his golden robot helmet in comic despair, digital tear marks animated on his cyan visor, glowing blue exhibit lights, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "天啊！那以後公海龜不就找不到老婆，要絕種了嗎？！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S08",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S08.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Side profile panning tracking shot.",
+      "action": "Starting from <Picture 1>, Teacher Huang walks along an illuminated coral reef diorama, gazing at clownfish and wrasse swimming through anemones with solemn contemplation.",
+      "first_frame_prompt": "Side profile tracking shot, 2D anime style. Teacher Huang walking beside a radiant coral reef aquarium exhibit with colorful clownfish and sea anemones, deep sea ambient glow, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "不只海龜，連小丑魚和小藍倒吊也因為海水酸化與暖化，迷失找家的方向。",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S09",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S09.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Low-angle hero shot with steady pedestal rise.",
+      "action": "Starting from <Picture 1>, Xiaoji straightens his posture, cyan chest screen glowing with determination as he raises a clenched yellow fist towards the ceiling lights.",
+      "first_frame_prompt": "Low-angle heroic close-up, 2D anime style. Xiaoji clenching his robotic fist with bright determined cyan visor eyes, chest screen glowing brightly, museum spotlights illuminating his armor, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "那我們趕快替沙灘撐陽傘！給海龜媽媽裝冷氣降溫！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S10",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S10.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Medium shot with warm two-shot composition.",
+      "action": "Starting from <Picture 1>, Teacher Huang chuckles kindly, placing his warm hand gently on Xiaoji's metallic yellow shoulder armor, gesturing toward an interactive coastal restoration map.",
+      "first_frame_prompt": "Medium two-shot, 2D anime style. Teacher Huang smiling warmly with hand on Xiaoji's yellow shoulder armor, pointing to a holographic map of coastal tree planting, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "科學家真的在沙灘搭遮陽網、種濱海林！但最根本的，還是全球減碳。",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S11",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S11.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "High-angle 3/4 hero shot.",
+      "action": "Starting from <Picture 1>, Xiaoji nods vigorously, his golden antenna bobbing with energy as his visor displays a green leaf eco-icon.",
+      "first_frame_prompt": "High-angle 3/4 shot, 2D anime style. Xiaoji nodding energetically, green glowing leaf icon displayed on visor, warm futuristic museum background, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "我懂了！少開冷氣、隨手關燈，就能守護海龜弟弟出生！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S12",
+      "refs": [
+        "huang",
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S12.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Wide tracking two-shot moving alongside characters.",
+      "action": "Starting from <Picture 1>, Teacher Huang and Xiaoji stand side-by-side facing an illuminated ocean corridor, both nodding in shared resolution as ambient water caustics dance over them.",
+      "first_frame_prompt": "Wide two-shot, 2D anime style. Teacher Huang and Xiaoji standing together in a glowing ocean tunnel exhibit, turquoise water reflections rippling across their figures, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "守護性別平衡，就是守護生態多樣性。小吉，我們去下一站！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S13",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S13.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Dynamic low-angle action tracking.",
+      "action": "Starting from <Picture 1>, Xiaoji springs into a sprint, feet emitting brief cyan exhaust trails as he dashes ahead with joyful eagerness.",
+      "first_frame_prompt": "Dynamic low-angle shot, 2D anime style. Xiaoji dashing forward with spirited momentum, faint cyan energy sparkles at his feet, futuristic museum corridor extending forward, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "衝啊！下一站聽說有超巨大的塑膠怪獸在等我們！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S14",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S14.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Cinematic 180-degree continuous arc orbit shot.",
+      "action": "Starting from <Picture 1>, the camera executes a continuous, sweeping 180-degree circular orbit around Xiaoji as he jogs steadily toward the radiant gallery portal. The camera pivots smoothly around his right shoulder, swinging from a frontal tracking shot into an epic over-the-shoulder wide view of the illuminated marine pavilion glowing under twilight.",
+      "first_frame_prompt": "Medium dynamic shot, 2D anime animation style. Xiaoji jogging forward in a brightly lit ocean museum hallway, looking forward with bright visor eyes, camera positioned in front of him, colorful floating jelly-fish light fixtures above, 16:9 widescreen.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "別跑太快！那是海科館最震撼的海洋廢棄物實境區！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    }
+  ]
+}

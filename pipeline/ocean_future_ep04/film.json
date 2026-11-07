@@ -1,0 +1,346 @@
+{
+  "_comment": "V3 海洋未來式: 14個鏡頭(S01~S14)，含精準尾幀與電影級動態運鏡",
+  "title": "海洋未來式 第4集：藍碳救星與未來超市",
+  "episode_id": "ep04",
+  "total_shots": 14,
+  "total_images_required": 15,
+  "image_manifest": {
+    "first_frames_14": [
+      "out/first/S01.png",
+      "out/first/S02.png",
+      "out/first/S03.png",
+      "out/first/S04.png",
+      "out/first/S05.png",
+      "out/first/S06.png",
+      "out/first/S07.png",
+      "out/first/S08.png",
+      "out/first/S09.png",
+      "out/first/S10.png",
+      "out/first/S11.png",
+      "out/first/S12.png",
+      "out/first/S13.png",
+      "out/first/S14.png"
+    ],
+    "last_frames": [
+      "out/last/S09.png"
+    ]
+  },
+  "repo_dir": "../..",
+  "voice_mode": "h3_ref",
+  "h3": {
+    "style": "a vibrant 2D cel-shaded animated feature film, clean bold line art, deep ocean cyan and warm gallery spotlight illumination, rich harmonious colors, smooth cartoon toon shading",
+    "setting": "National Museum of Marine Science and Technology exhibition gallery with towering curved ocean projection screens and high-tech climate displays, as an animated cartoon set",
+    "draft": false,
+    "steps": 14,
+    "default_seed": 202611,
+    "soundscape": "Immersive deep sea ambient hum with gentle water resonance, museum footsteps, and crisp electronic data pulses.",
+    "camera": "Cinematic camera movement with smooth tracking, push-in, arc orbiting, and dynamic focal depth.",
+    "constraints": [
+      "Maintain the exact cartoon animation style, clean bold outlines, and character proportions of <Picture 1> in every single frame.",
+      "Every character keeps the exact same cartoon design, clothing colors, and robot markings as in <Picture 1> from the first frame to the last frame.",
+      "Keep all museum exhibition screens, glass pedestals, and climate graphics solid, stable, and consistent with <Picture 1>.",
+      "Keep all character limbs, hands, glasses, antennas, and facial features clean and well-formed."
+    ]
+  },
+  "chars": {
+    "huang": {
+      "name": "黃老師",
+      "sub_color": "&H00FFFFFF",
+      "look": "Teacher Huang, a cartoon Taiwanese male museum volunteer teacher with short grey-black hair, round black-rimmed glasses, a warm friendly smile, a burgundy volunteer vest over a white short-sleeve shirt, dark prayer beads on his left wrist, and black trousers",
+      "h3_voice": "a warm, expressive middle-aged Taiwanese male teacher voice, clear and lively, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_huang.wav"
+    },
+    "xiaoji": {
+      "name": "小吉",
+      "sub_color": "&H0000E5FF",
+      "look": "Xiaoji (GiGi), a cartoon robot with a smooth round golden-yellow helmet with Puti-AI text on the forehead, large oval glowing cyan visor eyes on a dark screen face, circular cyan glowing ear discs, chunky golden-yellow armor, a small chest screen displaying GiGi, dark-grey mechanical joints, and a small backpack with a glowing cyan energy cell",
+      "h3_voice": "a bright, energetic young boy-robot voice, heroic and highly expressive, with a faint metallic ring, natural Taiwanese Mandarin",
+      "ref_voice": "out/voice/ref_xiaoji.wav"
+    }
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S01.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Slow sweeping panoramic pan across an underwater kelp forest diorama.",
+      "action": "Starting from <Picture 1>, Xiaoji gazes in awe through a massive panoramic floor-to-ceiling glass wall at towering emerald-green kelp forests and lush seagrass meadows swaying gently in artificial sea currents.",
+      "first_frame_prompt": "Wide panoramic shot, 2D anime style. Xiaoji standing in front of a colossal glass aquarium showing a magnificent underwater kelp forest and seagrass meadow with sun rays filtering down, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "哇！這片海底大森林好漂亮！比陸地上的神木還要壯觀耶！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S02",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S02.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Medium tracking shot beside Teacher Huang.",
+      "action": "Starting from <Picture 1>, Teacher Huang walks in gracefully, pointing up toward floating carbon-dioxide molecular bubbles being captured by the kelp leaves on the screen.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang in burgundy vest pointing up at glowing holographic CO2 bubbles being absorbed by cartoon kelp plants, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "這就是地球最強大的固碳高手——藍碳！紅樹林、海草床跟海藻森林！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S03",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S03.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Tight close-up with data graphics reflecting in visor.",
+      "action": "Starting from <Picture 1>, Xiaoji blinks his cyan visor as mathematical carbon sequestration comparison formulas flash rapidly across his eye screen.",
+      "first_frame_prompt": "Close-up shot, 2D anime style. Xiaoji calculating data, glowing green mathematical numbers and tree vs kelp icons reflected on his visor, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "藍碳？牠們吸碳的速度，比陸地上的森林還要厲害嗎？",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S04",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S04.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Eye-level medium shot with dynamic infographic backdrops.",
+      "action": "Starting from <Picture 1>, Teacher Huang nods enthusiastically, hands opening wide as an infographic behind him shows coastal wetlands storing carbon for thousands of years in sediment.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang explaining with open hands in front of an animated sediment layer diagram demonstrating millennial carbon storage, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "何止厲害！紅樹林吸碳固碳的速度，可是熱帶雨林的四到十倍呢！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S05",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S05.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Low-angle heroic close-up.",
+      "action": "Starting from <Picture 1>, Xiaoji salutes toward the giant kelp forest, his golden armor catching the vivid green light.",
+      "first_frame_prompt": "Low-angle close-up, 2D anime style. Xiaoji rendering a respectful salute to the underwater kelp forest, green light reflections, bright comic expression, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "失敬失敬！原來海草才是真正的地球救火隊長！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S06",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S06.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Tracking dolly guiding viewers toward an interactive supermarket entrance.",
+      "action": "Starting from <Picture 1>, Teacher Huang turns around with a welcoming gesture, guiding Xiaoji into an open, brightly lit marketplace called 'Ocean Future Market'.",
+      "first_frame_prompt": "Medium wide shot, 2D anime style. Teacher Huang gesturing warmly towards a bustling, sleek Japanese-style zero-waste eco-supermarket exhibit, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "更厲害的在後面！來看看未來的低碳超市，我們日常該怎麼買！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S07",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S07.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Eye-level medium shot pushing along produce shelves.",
+      "action": "Starting from <Picture 1>, Xiaoji pushes a lightweight bamboo shopping cart, inspecting naked zero-packaging fresh vegetables and seaweed chips with curious eyes.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Xiaoji pushing a modern bamboo shopping cart past wooden shelves filled with plastic-free bulk produce and glass jars, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "哇！架子上全都沒有塑膠袋包裝耶！連標籤都是電子水墨紙！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S08",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S08.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Two-shot medium close-up over shopping cart.",
+      "action": "Starting from <Picture 1>, Teacher Huang picks up a twine-tied package of organic Taiwanese kelp, showing Xiaoji the zero-carbon certification logo stamped on the brown paper wrapping.",
+      "first_frame_prompt": "Medium two-shot, 2D anime style. Teacher Huang showing Xiaoji an organic twine-tied kelp package with a green low-carbon stamp in the supermarket exhibit, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "在地海藻、裸買裸賣、自備提袋，每一次消費都是在為地球的未來投票！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S09",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S09.png",
+      "use_last": true,
+      "last_frame": "out/last/S09.png",
+      "camera": "High-angle medium shot directly over the bamboo shopping cart.",
+      "action": "Starting from <Picture 1> and finishing at <Picture 2>, the camera tilts slightly downward as Xiaoji steadily lowers both arms, placing the twine-tied kelp package smoothly into the bamboo basket beside fresh vegetables.",
+      "first_frame_prompt": "High-angle medium shot, 2D anime style. Xiaoji holding a twine-tied paper kelp package with both hands at chest level directly above a bamboo shopping cart basket, 16:9.",
+      "last_frame_prompt": "Maintain exact same high-angle angle and Xiaoji character from <Picture 1>. Xiaoji does NOT turn around. Xiaoji has gently lowered both hands into the basket, resting the kelp package securely next to fresh produce, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "放進我的菜籃！今天晚餐就吃低碳海帶豆腐味噌湯！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S10",
+      "refs": [
+        "huang"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S10.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Over-the-shoulder medium shot facing the electronic checkout counter.",
+      "action": "Starting from <Picture 1>, Teacher Huang scans a virtual carbon credit card at the checkout terminal, green digital leaves floating up on the screen showing negative carbon points earned.",
+      "first_frame_prompt": "Medium shot, 2D anime style. Teacher Huang tapping a green carbon credit card on a futuristic transparent POS terminal, digital green leaves floating upward, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "嗶一聲！只要選擇低碳認證產品，你就能直接賺取海洋保育點數！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S11",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S11.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Low-angle heroic three-quarter view.",
+      "action": "Starting from <Picture 1>, Xiaoji taps his golden chest plate proudly as his energy gauge fills up with a sparkling green eco-charge.",
+      "first_frame_prompt": "Low-angle close-up, 2D anime style. Xiaoji glowing with pride, green eco-energy bar flashing full on his chest display, bright museum lighting, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "太讚了！原來愛地球不只不麻煩，還能變得這麼時尚又有趣！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S12",
+      "refs": [
+        "huang",
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S12.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Wide panoramic two-shot with golden sunset lighting.",
+      "action": "Starting from <Picture 1>, Teacher Huang and Xiaoji walk toward the expansive glass exit gallery, golden sunset rays reflecting off the calm ocean surface visible outside.",
+      "first_frame_prompt": "Wide panoramic shot, 2D anime style. Teacher Huang and Xiaoji walking side-by-side toward a grand glass observation hall overlooking the sunset over Keelung bay, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "海洋的未來不是預言，而是我們每一個人的選擇。小吉，準備好出發了嗎？",
+        "at": 0.6
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S13",
+      "refs": [
+        "xiaoji"
+      ],
+      "dur": 6.0,
+      "first_frame": "out/first/S13.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Front-facing medium hero shot.",
+      "action": "Starting from <Picture 1>, Xiaoji turns to the camera, giving a crisp high-energy thumbs-up, eyes shining with warmth and determination.",
+      "first_frame_prompt": "Medium front-facing hero shot, 2D anime style. Xiaoji giving an enthusiastic thumbs-up to the viewer with glowing cyan eyes, golden armor catching golden hour sunlight, 16:9.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "xiaoji",
+        "text": "準備好了！大家跟著我和黃老師，一起守護我們的海洋未來式！",
+        "at": 0.5
+      },
+      "tail": 1.0
+    },
+    {
+      "id": "S14",
+      "refs": [
+        "huang",
+        "xiaoji"
+      ],
+      "dur": 6.5,
+      "first_frame": "out/first/S14.png",
+      "use_last": false,
+      "last_frame": null,
+      "camera": "Dolly out and spiral pedestal up into grand aerial perspective.",
+      "action": "Starting from <Picture 1>, the camera smoothly dollies backward while spiraling upward in an elegant ascending crane move. Teacher Huang and Xiaoji stand side-by-side at the observation railing waving toward the horizon, while the entire futuristic ocean ecological dome and sparkling blue sea expand grandly beneath them.",
+      "first_frame_prompt": "Wide cinematic shot, 2D anime animation style. Teacher Huang and Xiaoji standing together at a panoramic observation deck, waving outward towards an expansive eco-harbor with solar boats and offshore wind turbines under magnificent sunset skies, 16:9 widescreen.",
+      "cut_in": 0.0,
+      "line": {
+        "who": "huang",
+        "text": "海科館海洋未來式特展，期待與你一起創造藍色奇蹟！",
+        "at": 0.6
+      },
+      "tail": 1.0
+    }
+  ]
+}
