@@ -1,4 +1,4 @@
-"""依標點適當斷句，每次只顯示單行字幕（每行 <= 20 字，絕不一次顯示兩行），並快速重壓 16:9 / 9:16 成片。"""
+﻿"""依標點適當斷句，每次只顯示單行字幕（每行 <= 20 字，絕不一次顯示兩行），並快速重壓 16:9 / 9:16 成片。"""
 import json
 import re
 import shutil
@@ -25,7 +25,7 @@ def dur(p):
     return float(r.stdout.strip())
 
 
-def split_sub_clauses(role_name, text, t_start, t_end, max_len=20):
+def split_sub_clauses(role_name, text, t_start, t_end, max_len=14):
     """將長句按標點切為多段單行字幕，每段嚴格 <= max_len 字（含首段角色名），絕不出現 \\N 雙行"""
     raw_parts = re.findall(r"[^，。？！、：…]+[，。？！、：…]*", text)
     if not raw_parts:
@@ -94,7 +94,7 @@ def main():
         if i + 1 < len(caps):
             b = min(b, caps[i + 1][0]["film_start"] - 0.08)
         b = min(b, r["start"] + r["dur"] - 0.08)
-        segs = split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=20)
+        segs = split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=14)
         for seg_a, seg_b, seg_txt in segs:
             print(f"  [{r['id']}] {seg_a:5.2f}s~{seg_b:5.2f}s ({len(seg_txt):2d}字): {seg_txt}")
             ev += f"Dialogue: 0,{ass_time(seg_a)},{ass_time(seg_b)},{l['who']},,0,0,0,,{seg_txt}\n"
@@ -123,7 +123,7 @@ def main():
         if i + 1 < len(caps):
             b = min(b, caps[i + 1][0]["film_start"] - 0.08)
         b = min(b, r["start"] + r["dur"] - 0.08)
-        for seg_a, seg_b, seg_txt in split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=20):
+        for seg_a, seg_b, seg_txt in split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=14):
             ev_v += f"Dialogue: 1,{ass_time(seg_a)},{ass_time(seg_b)},{l['who']},,0,0,0,,{seg_txt}\n"
 
     (POST / "subs_vertical.ass").write_text(hdr_v + ev_v, encoding="utf-8")
@@ -172,3 +172,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

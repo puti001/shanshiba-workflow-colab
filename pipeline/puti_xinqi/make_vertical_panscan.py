@@ -1,4 +1,4 @@
-"""9:16 智慧導播運鏡版 (Smart Pan & Scan Virtual Camera)
+﻿"""9:16 智慧導播運鏡版 (Smart Pan & Scan Virtual Camera)
 直接從 16:9 (1920x1080) 無字幕母帶取樣，依每鏡劇情、說話者與文物重點，
 以 Cosine 平滑緩動 (Smooth Ease-In-Out) 進行水平搖鏡 (Pan) 與呼吸推軌 (Zoom)，
 輸出滿版 9:16 (1080x1920) 直式影片並疊加單行分段字幕 (<=20字/行)。
@@ -205,7 +205,7 @@ def main():
         if i + 1 < len(caps):
             b = min(b, caps[i + 1][0]["film_start"] - 0.08)
         b = min(b, r["start"] + r["dur"] - 0.08)
-        for seg_a, seg_b, seg_txt in split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=20):
+        for seg_a, seg_b, seg_txt in split_sub_clauses(chars[l["who"]]["name"], l["text"], a, b, max_len=14):
             ev_v += f"Dialogue: 1,{ass_time(seg_a)},{ass_time(seg_b)},{l['who']},,0,0,0,,{seg_txt}\n"
 
     subs_p = POST / "subs_vert_panscan.ass"
@@ -232,3 +232,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
